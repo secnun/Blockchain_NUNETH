@@ -56,6 +56,7 @@ class Blockchain(object):
             'previous_hash' : previous_hash or self.hash(self.chain[-1]),
         }
         block['hash'] = self.hash(block) #블록 안정성을 위해 블록의 해시값 추가
+        #조회 시 바로 hash 확인 및 무결성을 체인 데이터에서 직관적 확인 위함.
         self.current_transaction = []
         self.chain.append(block)     
         return block
